@@ -12,6 +12,7 @@ import (
 
 const king_path string = "/root/king.txt"
 const king_name string = "lomarkomar"
+const DEBUG bool = false
 
 func main() {
 	SetProcessName("systemd")
@@ -35,7 +36,9 @@ func full_loop() {
 
 func check(err error) {
 	if err != nil {
-		fmt.Println("Error:", err)
+		if DEBUG {
+			fmt.Println("Error:", err)
+		}
 		return
 	}
 }
